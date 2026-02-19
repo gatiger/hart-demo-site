@@ -1,0 +1,14 @@
+/* Homepage-only theme: Deep Navy + Warm Gold (official/traditional) */
+:root{
+  --accent: #1e2a44;
+  --accent-dark: #141d30;
+  --accent-soft: #eef2f7;
+
+  /* keep your high-visibility orange focus (WCAG-friendly) */
+  --focus: #ff7a18;
+  --focus-soft: rgba(255,122,24,.25);
+
+  --text: rgba(15, 24, 41, .92);
+  --muted: rgba(15, 24, 41, .70);
+  --border: rgba(15, 24, 41, .14);
+}
