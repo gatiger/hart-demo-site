@@ -541,7 +541,7 @@ body.menuOpen{ overflow: hidden; }
   font-weight: 900;
 }
 
-.alertBar .x:hover{ background: rgba(185,28,28,.06); }
+.alertBar .x:hover{ background: rgba(185,28,28,.25); }
 
 /* Filters */
 .filters{
@@ -749,4 +749,5 @@ select:focus-visible{
 @media (hover: none) and (pointer: coarse){
   .phone-link::before{ display:inline; }
 }
+
 
