@@ -515,7 +515,7 @@ body.menuOpen{ overflow: hidden; }
 .alertBar{
   padding: 12px 14px;
   border-radius: 18px;
-  border:1px solid rgba(185,28,28,.25);
+  border:1px solid rgba(185,28,28,.50);
   background: rgba(185,28,28,.06);
   display:flex;
   gap:12px;
@@ -749,3 +749,4 @@ select:focus-visible{
 @media (hover: none) and (pointer: coarse){
   .phone-link::before{ display:inline; }
 }
+
