@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "id": "adult probation",
+      "name": "Adult probation",
+      "phone": "(706) 376-7161"
+    },
+    {
+      "id": "ems",
+      "name": "Ambulance Service / EMS",
+      "phone": "(706) 376-3930"
+    },
+    {
+      "id": "boc",
+      "name": "Board of Commissioners",
+      "phone": "(706) 376-2404"
+    },
+	{
+		"id": "elections",
+		"name": "Board of Elections and Registration",
+		"phone": "(706) 376-8911"
+	}
+  ]
+}
