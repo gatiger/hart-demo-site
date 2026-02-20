@@ -346,11 +346,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // Use relative paths (plays nicer on a county server subfolder)
   const site = await loadJSON("./content/site.json");
+  const alerts = await loadJSON("./content/alerts.json");
   const directory = await loadJSON("./content/directory.json");
   const news = await loadJSON("./content/news.json");
 
-  if(site) renderAlert(site);
-  if(directory?.items) renderDirectory(directory.items);
-  if(news?.items) renderNews(news.items);
+  // Alerts: prefer alerts.json, fall back to site.json if needed
+  if (alerts) renderAlert(alerts);
+  else if (site) renderAlert(site);
 
+  if (directory?.items) renderDirectory(directory.items);
+  if (news?.items) renderNews(news.items);
 });
+
