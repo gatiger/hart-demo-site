@@ -1,8 +1,8 @@
 {
   "items": [
     {
-      "id": "adult Probation",
-      "name": "Adult probation",
+      "id": "adult probation",
+      "name": "Adult Probation",
       "phone": "(706) 376-7161"
     },
     {
@@ -23,3 +23,4 @@
   ]
 
 }
+
