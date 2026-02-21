@@ -111,4 +111,57 @@
     width: 100%;
     justify-content: flex-start;
   }
+  
+  /* --- Multi-alert stack spacing --- */
+.hc-alertstack{
+  display: grid;
+  gap: 10px;
+}
+
+/* --- Preview: 1 line with ellipsis if overflow --- */
+.hc-alert__preview{
+  opacity: .92;
+  line-height: 1.35;
+  font-weight: 500;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+/* --- Expanded details area --- */
+.hc-alert__details{
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255,255,255,.14);
+}
+
+.hc-alert__full{
+  opacity: .95;
+  line-height: 1.45;
+}
+
+.hc-alert__link--inline{
+  margin-top: 10px;
+}
+
+/* --- View/Hide button --- */
+.hc-alert__toggle{
+  height: 38px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.08);
+  color: rgba(255,255,255,.92);
+  cursor: pointer;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.hc-alert__toggle:focus-visible{
+  outline: 3px solid rgba(255,255,255,.75);
+  outline-offset: 2px;
+}
 }
