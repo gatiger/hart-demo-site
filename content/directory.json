@@ -2,22 +2,22 @@
   "items": [
     {
       "id": "adult probation",
-      "name": "Adult probation",
+      "title": "Adult probation",
       "phone": "(706) 376-7161"
     },
     {
       "id": "ems",
-      "name": "Ambulance Service / EMS",
+      "title": "Ambulance Service / EMS",
       "phone": "(706) 376-3930"
     },
     {
       "id": "boc",
-      "name": "Board of Commissioners",
+      "title": "Board of Commissioners",
       "phone": "(706) 376-2404"
     },
 	{
 		"id": "elections",
-		"name": "Board of Elections and Registration",
+		"title": "Board of Elections and Registration",
 		"phone": "(706) 376-8911"
 	},
   {
@@ -26,6 +26,24 @@
     "phone": "(706) 376-8590",
     "fax": "(706) 376-5177",
     "website": "https://www.hart-chamber.org"
+  },
+  {
+    "id": "city hall",
+    "title": "City of Hartwell",
+    "phone": "(706) 375-4756",
+    "fax": "(706) 376-6263",
+    "website": "https://www.hartwellga.gov"
+  },
+  {
+    "id": "clerk",
+    "title": "Clerk of Court",
+    "phone": "(706) 376-7189"
+  },
+  {
+    "id": "coroner",
+    "title": "Coroner",
+    "name": "Mike Adams",
+    "email": "coroner@hartcountyga.gov"
   }
   ]
 }
