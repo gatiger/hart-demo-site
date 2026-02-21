@@ -29,10 +29,11 @@
       "level": "info",
       "template": "banner",
       "title": "2026 Personal Property Returns",
-      "message": "The has been an error with the personal property returns this year with people recieving duplicates.  Please contact the Tax Assessor's office at (706) 376-3997 for more information."
+      "message": "The has been an error with the personal property returns this year with people recieving duplicates.  Please contact the Tax Assessor's office at (706) 376-3997 for more information.",
       "dismissible": false
     }
   ]
 
 }
+
 
