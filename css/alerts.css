@@ -94,22 +94,22 @@
 /* Softer full background severity styles */
 
 .hc-alert--critical {
-  background: rgba(185, 28, 28, 0.85);   /* red */
+  background: rgba(185, 28, 28, 0.75);   /* red */
   color: #ffffff;
 }
 
 .hc-alert--important {
-  background: rgba(255, 122, 24, 0.85);  /* orange */
+  background: rgba(255, 122, 24, 0.75);  /* orange */
   color: #ffffff;
 }
 
 .hc-alert--info {
-  background: rgba(31, 78, 140, 0.85);   /* site blue */
+  background: rgba(31, 78, 140, 0.75);   /* site blue */
   color: #ffffff;
 }
 
 .hc-alert--success {
-  background: rgba(21, 128, 61, 0.85);   /* green */
+  background: rgba(21, 128, 61, 0.75);   /* green */
   color: #ffffff;
 }
 
