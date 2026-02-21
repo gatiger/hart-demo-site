@@ -98,7 +98,7 @@
 /* Softer full background severity styles */
 
 .hc-alert--critical {
-  background: rgba(120, 15, 15, 0.6);   /* red */
+  background: rgba(185,28,28,0.85);   /* red */
   color: #ffffff;
 }
 
@@ -192,4 +192,5 @@
 
 
 }
+
 
