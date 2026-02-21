@@ -141,8 +141,8 @@ function renderDirectory(items) {
     if (title) metaParts.push(`<span>${title}</span>`);
     if (phone) metaParts.push(`<a href="${telHref}" class="phone-link">Phone: ${phone}</a>`);
     if (fax)   metaParts.push(`<a href="${faxHref}" class="phone-link">Fax: ${fax}</a>`);
-    if (email) metaParts.push(`<a href="${mailHref}" class="phone-link">Email ${name || "office"}</a>`);
-    if (webHref) metaParts.push(`<a href="${webHref}" target="_blank" rel="noopener noreferrer" class="phone-link">Visit website</a>`);
+    if (email) metaParts.push(`<a href="${mailHref}" class="link">Email ${name || "office"}</a>`);
+    if (webHref) metaParts.push(`<a href="${webHref}" target="_blank" rel="noopener noreferrer" class="link">Visit website</a>`);
 
     return `
       <article class="item" aria-label="${name || "Directory entry"}">
