@@ -206,13 +206,25 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Use relative paths (plays nicer on a county server subfolder)
   const site = await loadJSON("./content/site.json");
   const alerts = await loadJSON("./content/alerts.json");
-  const directory = await loadJSON("./content/directory.json");
-  const news = await loadJSON("./content/news.json");
 
   // Alerts: prefer alerts.json, fall back to site.json if needed
- if (alerts) window.renderAlert(alerts);
-else if (site) window.renderAlert(site);
+  if (alerts) window.renderAlert(alerts);
+  else if (site) window.renderAlert(site);
 
-  if (directory?.items) renderDirectory(directory.items);
-  if (news?.items) renderNews(news.items);
+  // Page-scoped content: only load JSON when the page declares it
+  const dirEl = document.getElementById("directoryList");
+  const dirPath = dirEl?.getAttribute("data-json");
+  if (dirPath) {
+    const directory = await loadJSON(dirPath);
+    if (directory?.items) renderDirectory(directory.items);
+    else if (Array.isArray(directory)) renderDirectory(directory);
+  }
+
+  const newsEl = document.getElementById("newsList");
+  const newsPath = newsEl?.getAttribute("data-json");
+  if (newsPath) {
+    const news = await loadJSON(newsPath);
+    if (news?.items) renderNews(news.items);
+    else if (Array.isArray(news)) renderNews(news);
+  }
 });

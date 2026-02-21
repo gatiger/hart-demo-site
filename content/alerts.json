@@ -15,25 +15,13 @@
     {
       "id": "2026-tax-deadline",
       "active": true,
-      "level": "info",
+      "level": "important",
       "template": "compact",
       "title": "Tax Reminder",
       "message": "Property tax payments are due March 31.",
       "link": { "label": "Pay / Details", "href": "/tax-commissioner.html" },
       "dismissible": true,
       "end": "2026-03-31T23:59:00-05:00"
-    },
-    {
-      "id": "2026-personal-property-returns",
-      "active": true,
-      "level": "info",
-      "template": "banner",
-      "title": "2026 Personal Property Returns",
-      "message": "The has been an error with the personal property returns this year with people recieving duplicates.  Please contact the Tax Assessor's office at (706) 376-3997 for more information.",
-      "dismissible": false
     }
   ]
-
 }
-
-
