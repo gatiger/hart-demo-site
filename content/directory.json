@@ -8,6 +8,7 @@
     {
       "id": "ems",
       "title": "Ambulance Service / EMS",
+      "url": "/ems.html",
       "phone": "(706) 376-3930"
     },
     {
@@ -30,9 +31,9 @@
   {
     "id": "city hall",
     "title": "City of Hartwell",
+    "url": "https://www.hartwellga.gov",
     "phone": "(706) 375-4756",
-    "fax": "(706) 376-6263",
-    "website": "https://www.hartwellga.gov"
+    "fax": "(706) 376-6263"
   },
   {
     "id": "clerk",
