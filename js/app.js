@@ -117,56 +117,64 @@ function renderDirectory(items) {
   const visible = (items || []).filter(d => d.enabled !== false);
 
   list.innerHTML = visible.map(d => {
-    const name    = safe(d.name);
-    const dept    = safe(d.department || d.dept || d.tag || "");
-    const title   = safe(d.title || d.role || "");
-    const phone   = safe(d.phone);
-    const fax     = safe(d.fax);
-    const email   = safe(d.email);
-    const website = safe(d.website || d.url || d.web || d.link || d.website_url || "");
-    const hours   = safe(d.hours);
-    const desc    = safe(d.description);
+    const name  = safe(d.name);
+    const dept  = safe(d.department || d.dept || d.tag || "");
+    const title = safe(d.title || d.role || "");
+
+    const phone = safe(d.phone);
+    const fax   = safe(d.fax);
+    const email = safe(d.email);
+
+    // Keep these separate on purpose:
+    const pageUrl    = safe(d.url);       // internal page (recommended)
+    const websiteUrl = safe(d.website);   // external site
+
+    const hours = safe(d.hours);
+    const desc  = safe(d.description);
 
     const telHref  = phone ? `tel:${phone.replace(/[^\d+]/g, "")}` : "";
     const faxHref  = fax ? `tel:${fax.replace(/[^\d+]/g, "")}` : "";
     const mailHref = email ? `mailto:${email}` : "";
-    const titleHref = webHref || (d.url ? d.url : "");
 
-    const webHref = website
-      ? (website.startsWith("http://") || website.startsWith("https://")
-          ? website
-          : `https://${website}`)
+    // Normalize external website if provided
+    const webHref = websiteUrl
+      ? (websiteUrl.startsWith("http://") || websiteUrl.startsWith("https://")
+          ? websiteUrl
+          : `https://${websiteUrl}`)
       : "";
 
+    // Title link preference: internal url first, then external website
+    const titleHref = pageUrl || webHref;
+
     const metaParts = [];
-    //if (title) metaParts.push(`<span>${title}</span>`);
     if (phone) metaParts.push(`<a href="${telHref}" class="phone-link">Phone: ${phone}</a>`);
     if (fax)   metaParts.push(`<a href="${faxHref}" class="phone-link">Fax: ${fax}</a>`);
     if (email) metaParts.push(`<a href="${mailHref}" class="link">Email ${name || "office"}</a>`);
 
     const displayTitle = title || name || "Unnamed";
 
-return `
-  <article class="item" aria-label="${displayTitle}">
-    <div class="itemTop">
-      <div>
-        <h3 class="itemTitle">
-  ${titleHref
-    ? `<a href="${titleHref}" class="title-link">${displayTitle}</a>`
-    : displayTitle
-  }
-</h3>
-${title && name ? `<div class="sub" style="margin-top:4px">${name}</div>` : ""}
-      </div>
-    </div>
+    return `
+      <article class="item" aria-label="${displayTitle}">
+        <div class="itemTop">
+          <div>
+            <h3 class="itemTitle">
+              ${titleHref
+                ? `<a href="${titleHref}" class="title-link">${displayTitle}</a>`
+                : displayTitle
+              }
+            </h3>
+            ${title && name ? `<div class="sub" style="margin-top:4px">${name}</div>` : ""}
+            ${dept ? `<div class="sub" style="margin-top:4px">${dept}</div>` : ""}
+          </div>
+        </div>
 
-    ${metaParts.length ? `<div class="meta">${metaParts.join(`<span>•</span>`)}</div>` : ""}
+        ${metaParts.length ? `<div class="meta">${metaParts.join(`<span>•</span>`)}</div>` : ""}
 
-    ${hours ? `<div class="meta"><span>Hours: ${hours}</span></div>` : ""}
+        ${hours ? `<div class="meta"><span>Hours: ${hours}</span></div>` : ""}
 
-    ${desc ? `<p class="sub" style="margin-top:6px">${desc}</p>` : ""}
-  </article>
-`;
+        ${desc ? `<p class="sub" style="margin-top:6px">${desc}</p>` : ""}
+      </article>
+    `;
   }).join("");
 }
 
