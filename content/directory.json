@@ -26,10 +26,18 @@
 		"phone": "(706) 376-8590",
 		"fax": "(706) 376-5117",
 		"website": "https://www.hart-chamber.org"
-	  }
+	  },
+	{
+		"id": "city hall",
+		"name": "Hartwell City Hall",
+		"phone": "(706) 376-4756",
+		"fax": "(706) 376-6263",
+		"website": "https://www.hartwell-ga.info"
+	}
   ]
 
 }
+
 
 
 
