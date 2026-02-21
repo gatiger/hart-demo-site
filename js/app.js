@@ -144,21 +144,24 @@ function renderDirectory(items) {
     if (email) metaParts.push(`<a href="${mailHref}" class="link">Email ${name || "office"}</a>`);
     if (webHref) metaParts.push(`<a href="${webHref}" target="_blank" rel="noopener noreferrer" class="link">Visit website</a>`);
 
-    return `
-      <article class="item" aria-label="${name || "Directory entry"}">
-        <div class="itemTop">
-          <h3 class="itemTitle">${name || "Unnamed"}</h3><h3 class="itemTitle">${title || name || "Unnamed"}</h3>
-${title && name ? `<div class="sub" style="margin-top:4px">${name}</div>` : ""}
-          ${dept ? `<span class="tag info">${dept}</span>` : ""}
-        </div>
+    const displayTitle = title || name || "Unnamed";
 
-        ${metaParts.length ? `<div class="meta">${metaParts.join(`<span>•</span>`)}</div>` : ""}
+return `
+  <article class="item" aria-label="${displayTitle}">
+    <div class="itemTop">
+      <div>
+        <h3 class="itemTitle">${displayTitle}</h3>
+        ${title && name ? `<div class="sub" style="margin-top:4px">${name}</div>` : ""}
+      </div>
+    </div>
 
-        ${hours ? `<div class="meta"><span>Hours: ${hours}</span></div>` : ""}
+    ${metaParts.length ? `<div class="meta">${metaParts.join(`<span>•</span>`)}</div>` : ""}
 
-        ${desc ? `<p class="sub" style="margin-top:6px">${desc}</p>` : ""}
-      </article>
-    `;
+    ${hours ? `<div class="meta"><span>Hours: ${hours}</span></div>` : ""}
+
+    ${desc ? `<p class="sub" style="margin-top:6px">${desc}</p>` : ""}
+  </article>
+`;
   }).join("");
 }
 
