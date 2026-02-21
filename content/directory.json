@@ -58,7 +58,7 @@
 		  "title": "DFACS",
 		  "phone": "(706) 856-2740",
 		  "fax": "(706) 856-2792",
-		  "webiste": "https://dfcs.georgia.gov/contacts/hart-county"
+		  "website": "https://dfcs.georgia.gov/contacts/hart-county"
 	  },
 	  {
 		  "id": "district attorney",
@@ -69,6 +69,7 @@
   ]
 
 }
+
 
 
 
