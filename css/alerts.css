@@ -81,7 +81,7 @@
   flex-shrink: 0;
 }
 
-/* Links / buttons: consistent glassy treatment over colored backgrounds */
+/* Links / buttons: WCAG-friendly glassy treatment over colored backgrounds */
 .hc-alert__link,
 .hc-alert__toggle,
 .hc-alert__dismiss{
@@ -94,8 +94,10 @@
   padding: 0 12px;
 
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.35);
-  background: rgba(255,255,255,.14);
+
+  /* changed: darker glass so white text passes contrast */
+  border: 1px solid rgba(255,255,255,.55);
+  background: rgba(0,0,0,.28);
   color: #ffffff;
 
   text-decoration: none;
@@ -105,7 +107,20 @@
 }
 
 .hc-alert__link{
-  padding: 0 12px; /* same as toggle for alignment */
+  padding: 0 12px;
+}
+
+/* optional but recommended for usability */
+.hc-alert__link:hover,
+.hc-alert__toggle:hover,
+.hc-alert__dismiss:hover{
+  background: rgba(0,0,0,.36);
+}
+
+.hc-alert__link:active,
+.hc-alert__toggle:active,
+.hc-alert__dismiss:active{
+  background: rgba(0,0,0,.45);
 }
 
 .hc-alert__link:focus-visible,
