@@ -20,46 +20,63 @@
   <a class="skip-link" href="#main">Skip to main content</a>
 
   <header class="topbar">
-    <div class="navRow">
-      <a class="brand brandLink" href="index.html">
-        <div class="seal">
-          <img src="./assets/hart_seal.png" alt="Hart County, Georgia official seal">
-        </div>
-        <div class="brandText">
-          <div class="kicker">Hart County, Georgia</div>
-          <div class="title">PAGE TITLE HERE</div>
-        </div>
-      </a>
+  <div class="navRow">
+    <a class="brand brandLink" href="index.html">
+      <div class="seal">
+        <img src="./assets/hart_seal.png" alt="Hart County, Georgia official seal">
+      </div>
+      <div class="brandText">
+        <div class="kicker">Hart County, Georgia</div>
+        <div class="title">PAGE TITLE HERE</div>
+      </div>
+    </a>
 
-      <nav class="nav" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a class="active" href="directory.html" aria-current="page">Directory</a>
-        <a href="news.html">News</a>
-        <a href="meetings.html">Meetings</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-
-      <button id="menuBtn" class="btn ghost menuBtn" type="button" aria-haspopup="dialog" aria-controls="mobileMenu" aria-expanded="false">
-        Menu
-      </button>
-    </div>
-  </header>
-
-  <div id="menuBackdrop" class="menuBackdrop" hidden></div>
-
-  <aside id="mobileMenu" class="menuPanel" role="dialog" aria-modal="true" aria-label="Mobile menu" hidden>
-    <div class="menuPanelHead">
-      <div class="menuPanelTitle">Menu</div>
-      <button id="menuClose" class="btn ghost" type="button">Close</button>
-    </div>
-    <div class="menuPanelBody">
-      <a href="index.html">Home</a>
-      <a class="active" href="directory.html" aria-current="page">Directory</a>
+    <!-- Desktop top navigation -->
+    <nav class="topNav" aria-label="Primary">
+      <a href="directory.html">Directory</a>
+      <a href="departments.html">Departments</a>
+      <a href="commissioners.html">Commissioners</a>
+      <a href="employment.html">Employment</a>
+      <a href="about.html">About</a>
+      <a href="paynes-creek.html">Paynes Creek</a>
       <a href="news.html">News</a>
       <a href="meetings.html">Meetings</a>
       <a href="contact.html">Contact</a>
-    </div>
-  </aside>
+    </nav>
+
+    <!-- Mobile menu button -->
+    <button class="btn menuBtn" type="button"
+            aria-controls="mobileMenu"
+            aria-expanded="false"
+            id="menuBtn">
+      Menu
+    </button>
+  </div>
+</header>
+
+<!-- Mobile menu panel (add right after header) -->
+<div class="menuBackdrop" id="menuBackdrop" hidden></div>
+
+<aside class="menuPanel" id="mobileMenu" hidden aria-label="Mobile navigation">
+  <div class="menuPanelHead">
+    <div class="menuPanelTitle">Menu</div>
+    <button class="btn ghost" type="button" id="menuClose" aria-label="Close menu">Close</button>
+  </div>
+
+  <nav class="menuNav" aria-label="Primary mobile">
+    <a href="index.html">Home</a>
+    <a href="directory.html">Directory</a>
+    <a href="departments.html">Departments</a>
+    <a href="commissioners.html">Commissioners</a>
+    <a href="employment.html">Employment</a>
+    <a href="about.html">About Hart County</a>
+    <a href="paynes-creek.html">Paynes Creek Campground</a>
+    <hr>
+    <a href="news.html">News</a>
+    <a href="meetings.html">Meetings</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</aside>
 
   <main id="main" class="main">
     <section class="shell">
