@@ -159,9 +159,14 @@ function renderDirectory(items) {
           <div>
             <h3 class="itemTitle">
               ${titleHref
-                ? `<a href="${titleHref}" class="title-link">${displayTitle}</a>`
-                : displayTitle
-              }
+  ? `<a href="${titleHref}"
+        class="title-link"
+        ${titleHref.startsWith("http") ? 'target="_blank" rel="noopener noreferrer"' : ""}>
+        ${displayTitle}
+        ${titleHref.startsWith("http") ? '<span class="sr-only"> (opens in a new tab)</span>' : ""}
+     </a>`
+  : displayTitle
+}
             </h3>
             ${title && name ? `<div class="sub" style="margin-top:4px">${name}</div>` : ""}
             ${dept ? `<div class="sub" style="margin-top:4px">${dept}</div>` : ""}
