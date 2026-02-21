@@ -108,9 +108,9 @@ function initMobileMenu(){
 /* -------------------------
    Renderers
 -------------------------- */
-function renderDirectory(items){
+function renderDirectory(items) {
   const list = document.getElementById("directoryList");
-  if(!list) return;
+  if (!list) return;
 
   const safe = (v) => (v === undefined || v === null) ? "" : String(v).trim();
 
@@ -130,28 +130,19 @@ function renderDirectory(items){
     const telHref  = phone ? `tel:${phone.replace(/[^\d+]/g, "")}` : "";
     const faxHref  = fax ? `tel:${fax.replace(/[^\d+]/g, "")}` : "";
     const mailHref = email ? `mailto:${email}` : "";
-    const webHref = website
-  ? (website.startsWith("http://") || website.startsWith("https://") ? website : `https://${website}`)
-  : "";
 
+    const webHref = website
+      ? (website.startsWith("http://") || website.startsWith("https://")
+          ? website
+          : `https://${website}`)
+      : "";
 
     const metaParts = [];
-
-    if(title) metaParts.push(`<span>${title}</span>`);
-
-    if(phone)
-      metaParts.push(`<a href="${telHref}" class="phone-link">Phone: ${phone}</a>`);
-
-    if(fax)
-      metaParts.push(`<a href="${faxHref}" class="phone-link">Fax: ${fax}</a>`);
-
-    if(email)
-  metaParts.push(`<a href="${mailHref}" class="phone-link">Email ${name}</a>`);
-
-if (webHref) {
-  metaParts.push(
-    `<a href="${webHref}" target="_blank" rel="noopener noreferrer" class="phone-link">Visit website</a>`
-  );
+    if (title) metaParts.push(`<span>${title}</span>`);
+    if (phone) metaParts.push(`<a href="${telHref}" class="phone-link">Phone: ${phone}</a>`);
+    if (fax)   metaParts.push(`<a href="${faxHref}" class="phone-link">Fax: ${fax}</a>`);
+    if (email) metaParts.push(`<a href="${mailHref}" class="phone-link">Email ${name || "office"}</a>`);
+    if (webHref) metaParts.push(`<a href="${webHref}" target="_blank" rel="noopener noreferrer" class="phone-link">Visit website</a>`);
 
     return `
       <article class="item" aria-label="${name || "Directory entry"}">
