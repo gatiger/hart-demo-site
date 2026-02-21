@@ -44,12 +44,13 @@
 		  "id": "coroner",
 		  "title": "Coroner",
 		  "name": "Mike Adams",
-		  "Phone": "(706) 856-5322",
+		  "phone": "(706) 856-5322",
 		  "email": "coroner@hartcountyga.gov"
 	  }
   ]
 
 }
+
 
 
 
