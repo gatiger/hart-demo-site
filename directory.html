@@ -78,39 +78,40 @@
   </nav>
 </aside>
 
-  <main id="main" class="main">
-    <section class="shell">
-      <div class="pageHead">
-        <h1 class="pageTitle">Directory</h1>
-        <p class="pageSub">Departments, offices, and contact information.</p>
-      </div>
+<main id="main" class="container" tabindex="-1">
+  <div id="alertHolder"></div>
 
-      <div class="card">
-        <div class="cardHead">
+  <div class="pageLayout">
+    <div>
+      <section class="hero" style="margin-top:14px" aria-label="Directory overview">
+        <div class="heroTop">
           <div>
-            <div class="cardTitle">Search directory</div>
-            <div class="cardSub">Type a name, office, or keyword.</div>
+            <h1>Directory</h1>
+            <p>Departments, offices, and contact information.</p>
+
+            <div style="margin-top:12px">
+              <label class="sr-only" for="dirSearch">Search directory</label>
+              <input id="dirSearch" class="field" type="text"
+                     placeholder="Search..." autocomplete="off" />
+            </div>
           </div>
-          <div class="field" style="max-width:420px">
-            <label class="sr-only" for="dirSearch">Search</label>
-            <input id="dirSearch" type="text" placeholder="Search..." autocomplete="off">
+        </div>
+      </section>
+
+      <section class="card" style="margin-top:16px" aria-label="Directory list">
+        <div class="cardHeader">
+          <div>
+            <h2>Contacts</h2>
+            <p class="sub">Departments, offices, and contact information.</p>
           </div>
         </div>
 
-        <section aria-label="Directory list">
-          <!-- JSON renders here -->
-          <div class="list" id="directoryList"></div>
-        </section>
-
-        <footer class="footer">
-          <div class="footerInner">
-            <div class="muted">Logged in as <strong>Demo User</strong></div>
-            <div class="muted">© Hart County, GA (Demo)</div>
-          </div>
-        </footer>
-      </div>
-    </section>
-  </main>
+        <!-- JSON renders here -->
+        <div class="list" id="directoryList"></div>
+      </section>
+    </div>
+  </div>
+</main>
 
   <script>
     // Simple client-side filter for directory cards
