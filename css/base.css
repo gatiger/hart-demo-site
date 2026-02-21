@@ -515,7 +515,7 @@ body.menuOpen{ overflow: hidden; }
 .alertBar{
   padding: 12px 14px;
   border-radius: 18px;
-  border:1px solid rgba(185,28,28,.50);
+  border:1px solid rgba(185,28,28,.25);
   background: rgba(185,28,28,.06);
   display:flex;
   gap:12px;
@@ -541,7 +541,7 @@ body.menuOpen{ overflow: hidden; }
   font-weight: 900;
 }
 
-.alertBar .x:hover{ background: rgba(185,28,28,.25); }
+.alertBar .x:hover{ background: rgba(185,28,28,.06); }
 
 /* Filters */
 .filters{
@@ -725,6 +725,14 @@ select:focus-visible{
   *{ scroll-behavior:auto !important; transition:none !important; animation:none !important; }
 }
 
+/* Standard links used for email/website in directory */
+.link{
+  color: var(--accent);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.link:visited{ color: var(--accent-dark); }
+
 /* Phone links: clickable only on mobile */
 .phone-link{
   color: inherit;
@@ -749,5 +757,3 @@ select:focus-visible{
 @media (hover: none) and (pointer: coarse){
   .phone-link::before{ display:inline; }
 }
-
-
