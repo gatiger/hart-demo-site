@@ -142,8 +142,8 @@ function renderAlertsInto(mount, alerts){
 
               <!-- 1-line preview, ellipsis handled by CSS -->
               <div class="hc-alert__preview">
-  <strong>${title}</strong>
-</div>
+               <strong>${title}</strong>
+              </div>
 
               <!-- Full message (collapsed by default) -->
               <div class="hc-alert__details" id="${detailsId}" hidden>
