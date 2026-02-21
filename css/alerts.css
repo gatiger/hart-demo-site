@@ -103,17 +103,17 @@
 }
 
 .hc-alert--important {
-  background: rgba(255, 122, 24, 0.50);  /* orange */
+  background: rgba(255, 122, 24, 0.85);  /* orange */
   color: #ffffff;
 }
 
 .hc-alert--info {
-  background: rgba(31, 78, 140, 0.50);   /* site blue */
+  background: rgba(31, 78, 140, 0.85);   /* site blue */
   color: #ffffff;
 }
 
 .hc-alert--success {
-  background: rgba(21, 128, 61, 0.50);   /* green */
+  background: rgba(21, 128, 61, 0.85);   /* green */
   color: #ffffff;
 }
 
@@ -192,5 +192,6 @@
 
 
 }
+
 
 
