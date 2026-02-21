@@ -143,10 +143,10 @@ function renderDirectory(items){
       metaParts.push(`<a href="${faxHref}" class="phone-link">Fax: ${fax}</a>`);
 
     if(email)
-      metaParts.push(`<a href="${mailHref}" class="phone-link">Email</a>`);
+  metaParts.push(`<a href="${mailHref}" class="phone-link">Email ${name}</a>`);
 
-    if(website)
-      metaParts.push(`<a href="${webHref}" target="_blank" rel="noopener" class="phone-link">Website</a>`);
+if(website)
+  metaParts.push(`<a href="${webHref}" target="_blank" rel="noopener" class="phone-link">Visit website</a>`);
 
     return `
       <article class="item" aria-label="${name || "Directory entry"}">
@@ -216,3 +216,4 @@ else if (site) window.renderAlert(site);
   if (directory?.items) renderDirectory(directory.items);
   if (news?.items) renderNews(news.items);
 });
+
