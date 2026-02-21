@@ -15,7 +15,7 @@
     {
       "id": "2026-tax-deadline",
       "active": true,
-      "level": "important",
+      "level": "info",
       "template": "compact",
       "title": "Tax Reminder",
       "message": "Property tax payments are due March 31.",
@@ -24,4 +24,5 @@
       "end": "2026-03-31T23:59:00-05:00"
     }
   ]
+
 }
