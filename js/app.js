@@ -130,6 +130,7 @@ function renderDirectory(items) {
     const telHref  = phone ? `tel:${phone.replace(/[^\d+]/g, "")}` : "";
     const faxHref  = fax ? `tel:${fax.replace(/[^\d+]/g, "")}` : "";
     const mailHref = email ? `mailto:${email}` : "";
+    const titleHref = webHref || (d.url ? d.url : "");
 
     const webHref = website
       ? (website.startsWith("http://") || website.startsWith("https://")
@@ -142,7 +143,6 @@ function renderDirectory(items) {
     if (phone) metaParts.push(`<a href="${telHref}" class="phone-link">Phone: ${phone}</a>`);
     if (fax)   metaParts.push(`<a href="${faxHref}" class="phone-link">Fax: ${fax}</a>`);
     if (email) metaParts.push(`<a href="${mailHref}" class="link">Email ${name || "office"}</a>`);
-    if (webHref) metaParts.push(`<a href="${webHref}" target="_blank" rel="noopener noreferrer" class="link">Visit website</a>`);
 
     const displayTitle = title || name || "Unnamed";
 
@@ -150,8 +150,13 @@ return `
   <article class="item" aria-label="${displayTitle}">
     <div class="itemTop">
       <div>
-        <h3 class="itemTitle">${displayTitle}</h3>
-        ${title && name ? `<div class="sub" style="margin-top:4px">${name}</div>` : ""}
+        <h3 class="itemTitle">
+  ${titleHref
+    ? `<a href="${titleHref}" class="title-link">${displayTitle}</a>`
+    : displayTitle
+  }
+</h3>
+${title && name ? `<div class="sub" style="margin-top:4px">${name}</div>` : ""}
       </div>
     </div>
 
