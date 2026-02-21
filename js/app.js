@@ -138,7 +138,7 @@ function renderDirectory(items) {
       : "";
 
     const metaParts = [];
-    if (title) metaParts.push(`<span>${title}</span>`);
+    //if (title) metaParts.push(`<span>${title}</span>`);
     if (phone) metaParts.push(`<a href="${telHref}" class="phone-link">Phone: ${phone}</a>`);
     if (fax)   metaParts.push(`<a href="${faxHref}" class="phone-link">Fax: ${fax}</a>`);
     if (email) metaParts.push(`<a href="${mailHref}" class="link">Email ${name || "office"}</a>`);
@@ -147,7 +147,8 @@ function renderDirectory(items) {
     return `
       <article class="item" aria-label="${name || "Directory entry"}">
         <div class="itemTop">
-          <h3 class="itemTitle">${name || "Unnamed"}</h3>
+          <h3 class="itemTitle">${name || "Unnamed"}</h3><h3 class="itemTitle">${title || name || "Unnamed"}</h3>
+${title && name ? `<div class="sub" style="margin-top:4px">${name}</div>` : ""}
           ${dept ? `<span class="tag info">${dept}</span>` : ""}
         </div>
 
