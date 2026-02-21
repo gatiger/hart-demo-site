@@ -46,10 +46,29 @@
 		  "name": "Mike Adams",
 		  "phone": "(706) 856-5322",
 		  "email": "coroner@hartcountyga.gov"
+	  },
+	  {
+		  "id": "county attorney",
+		  "title": "County Attorney",
+		  "phone": "(706) 376-5418",
+		  "fax": "(706) 376-5416"
+	  },
+	  {
+		  "id": "dfacs",
+		  "title": "DFACS",
+		  "phone": "(706) 856-2740",
+		  "fax": "(706) 856-2792"
+	  },
+	  {
+		  "id": "district attorney",
+		  "title": "District Attorney",
+		  "phone": "(706) 376-3128",
+		  "fax": "(706) 376-1620"
 	  }
   ]
 
 }
+
 
 
 
