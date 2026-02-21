@@ -22,13 +22,17 @@
   justify-content:space-between;
   gap: 12px;
 
-  padding: 10px 14px;
-  border-bottom: 1px solid var(--hc-alert-border);
+  padding: 12px 16px;
+
+  border-radius: var(--radius, 16px);
+  overflow: hidden; /* important for rounded background + blur */
+
+  border: 1px solid var(--hc-alert-border);
   background: var(--hc-alert-bg);
   color: var(--hc-alert-text);
+
   backdrop-filter: blur(10px);
 }
-
 .hc-alert--banner{
   padding: 12px 16px;
 }
@@ -122,7 +126,7 @@
 /* Stack spacing */
 .hc-alertstack{
   display: grid;
-  gap: 10px;
+  gap: 5px;
 }
 
 /* Preview: 1 line with ellipsis if overflow */
