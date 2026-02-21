@@ -185,28 +185,5 @@
     justify-content: flex-start;
   }
   
-  /* Force level stripe colors to win */
-#siteAlert .hc-alert.hc-alert--critical {
-  border-top-color: var(--hc-alert-red) !important;
-}
 
-#siteAlert .hc-alert.hc-alert--important {
-  border-top-color: var(--hc-alert-amber) !important;
-}
-
-#siteAlert .hc-alert.hc-alert--info {
-  border-top-color: var(--hc-alert-blue) !important;
-}
-
-#siteAlert .hc-alert.hc-alert--success {
-  border-top-color: var(--hc-alert-green) !important;
-}
-
-#siteAlert .hc-alert.hc-alert--critical {
-  background: linear-gradient(
-    0deg,
-    rgba(239,68,68,.22),
-    rgba(239,68,68,.22)
-  ), var(--hc-alert-bg) !important;
-}
 }
