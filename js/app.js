@@ -118,17 +118,31 @@ function renderDirectory(items){
   const visible = (items || []).filter(d => d.enabled !== false);
 
   list.innerHTML = visible.map(d => {
-    const name = safe(d.name);
+    const name  = safe(d.name);
+    const dept  = safe(d.department || d.dept || d.tag || "");
+    const title = safe(d.title || d.role || "");
     const phone = safe(d.phone);
     const hours = safe(d.hours);
     const desc  = safe(d.description);
 
+    const telHref = phone ? `tel:${phone.replace(/[^\d+]/g, "")}` : "";
+
+    const metaParts = [];
+    if(title) metaParts.push(`<span>${title}</span>`);
+    if(phone) metaParts.push(`<a href="${telHref}" class="phone-link">${phone}</a>`);
+
     return `
-      <article class="item" aria-label="${name || "Department"}">
-        <h3 class="itemTitle">${name}</h3>
-        ${phone ? `<div class="meta">${phone}</div>` : ""}
-        ${hours ? `<div class="meta">Hours: ${hours}</div>` : ""}
-        ${desc  ? `<p class="sub" style="margin-top:6px">${desc}</p>` : ""}
+      <article class="item" aria-label="${name || "Directory entry"}">
+        <div class="itemTop">
+          <h3 class="itemTitle">${name || "Unnamed"}</h3>
+          ${dept ? `<span class="tag info">${dept}</span>` : ""}
+        </div>
+
+        ${metaParts.length ? `<div class="meta">${metaParts.join(`<span>•</span>`)}</div>` : ""}
+
+        ${hours ? `<div class="meta"><span>Hours: ${hours}</span></div>` : ""}
+
+        ${desc ? `<p class="sub" style="margin-top:6px">${desc}</p>` : ""}
       </article>
     `;
   }).join("");
