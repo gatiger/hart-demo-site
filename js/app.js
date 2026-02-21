@@ -123,14 +123,17 @@ function renderDirectory(items){
     const phone   = safe(d.phone);
     const fax     = safe(d.fax);
     const email   = safe(d.email);
-    const website = safe(d.website);
+    const website = safe(d.website || d.url || d.web || d.link || d.website_url || "");
     const hours   = safe(d.hours);
     const desc    = safe(d.description);
 
     const telHref  = phone ? `tel:${phone.replace(/[^\d+]/g, "")}` : "";
     const faxHref  = fax ? `tel:${fax.replace(/[^\d+]/g, "")}` : "";
     const mailHref = email ? `mailto:${email}` : "";
-    const webHref  = website ? website : "";
+    const webHref = website
+  ? (website.startsWith("http://") || website.startsWith("https://") ? website : `https://${website}`)
+  : "";
+
 
     const metaParts = [];
 
@@ -145,8 +148,10 @@ function renderDirectory(items){
     if(email)
   metaParts.push(`<a href="${mailHref}" class="phone-link">Email ${name}</a>`);
 
-if(website)
-  metaParts.push(`<a href="${webHref}" target="_blank" rel="noopener" class="phone-link">Visit website</a>`);
+if (webHref) {
+  metaParts.push(
+    `<a href="${webHref}" target="_blank" rel="noopener noreferrer" class="phone-link">Visit website</a>`
+  );
 
     return `
       <article class="item" aria-label="${name || "Directory entry"}">
@@ -216,4 +221,3 @@ else if (site) window.renderAlert(site);
   if (directory?.items) renderDirectory(directory.items);
   if (news?.items) renderNews(news.items);
 });
-
