@@ -21,7 +21,7 @@
 		"phone": "(706) 376-8911"
 	},
 	  {
-		"is": "chamber",
+		"id": "chamber",
 		"name": "Chamber of Commerce",
 		"phone": "(706) 376-8590",
 		"fax": "(706) 376-5117",
@@ -30,6 +30,7 @@
   ]
 
 }
+
 
 
 
