@@ -114,22 +114,39 @@ function renderDirectory(items){
 
   const safe = (v) => (v === undefined || v === null) ? "" : String(v).trim();
 
-  // Optional: hide disabled entries if you add enabled:false later
   const visible = (items || []).filter(d => d.enabled !== false);
 
   list.innerHTML = visible.map(d => {
-    const name  = safe(d.name);
-    const dept  = safe(d.department || d.dept || d.tag || "");
-    const title = safe(d.title || d.role || "");
-    const phone = safe(d.phone);
-    const hours = safe(d.hours);
-    const desc  = safe(d.description);
+    const name    = safe(d.name);
+    const dept    = safe(d.department || d.dept || d.tag || "");
+    const title   = safe(d.title || d.role || "");
+    const phone   = safe(d.phone);
+    const fax     = safe(d.fax);
+    const email   = safe(d.email);
+    const website = safe(d.website);
+    const hours   = safe(d.hours);
+    const desc    = safe(d.description);
 
-    const telHref = phone ? `tel:${phone.replace(/[^\d+]/g, "")}` : "";
+    const telHref  = phone ? `tel:${phone.replace(/[^\d+]/g, "")}` : "";
+    const faxHref  = fax ? `tel:${fax.replace(/[^\d+]/g, "")}` : "";
+    const mailHref = email ? `mailto:${email}` : "";
+    const webHref  = website ? website : "";
 
     const metaParts = [];
+
     if(title) metaParts.push(`<span>${title}</span>`);
-    if(phone) metaParts.push(`<a href="${telHref}" class="phone-link">${phone}</a>`);
+
+    if(phone)
+      metaParts.push(`<a href="${telHref}" class="phone-link">Phone: ${phone}</a>`);
+
+    if(fax)
+      metaParts.push(`<a href="${faxHref}" class="phone-link">Fax: ${fax}</a>`);
+
+    if(email)
+      metaParts.push(`<a href="${mailHref}" class="phone-link">Email</a>`);
+
+    if(website)
+      metaParts.push(`<a href="${webHref}" target="_blank" rel="noopener" class="phone-link">Website</a>`);
 
     return `
       <article class="item" aria-label="${name || "Directory entry"}">
