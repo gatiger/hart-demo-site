@@ -33,10 +33,24 @@
 		"phone": "(706) 376-4756",
 		"fax": "(706) 376-6263",
 		"website": "https://www.hartwellga.gov"
-	}
+	},
+	  {
+		  "id": "clerk",
+		  "name": "Clerk of Court",
+		  "phone": "(706) 376-7189",
+		  "website": "https://hartgaclerkofcourt.com"
+	  },
+	  {
+		  "id": "coroner",
+		  "name": "Coroner",
+		  "name": "Mike Adams",
+		  "Phone": "(706) 856-5322",
+		  "email": "coroner@hartcountyga.gov"
+	  }
   ]
 
 }
+
 
 
 
