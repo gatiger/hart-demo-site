@@ -1,10 +1,17 @@
 /* alerts.css */
 
 :root{
-  --hc-alert-red: #ef4444;
-  --hc-alert-amber: var(--accent, #ff7a18);
-  --hc-alert-blue: #60a5fa;
+  /* Bright border colors */
+  --hc-alert-red:   #ef4444;
+  --hc-alert-amber: #ff9a3d;  /* brighter than background orange */
+  --hc-alert-blue:  #60a5fa;
   --hc-alert-green: #22c55e;
+
+  /* Background tints (slightly darker for readability) */
+  --hc-alert-red-bg:   rgba(185, 28, 28, 0.85);
+  --hc-alert-amber-bg: rgba(255, 122, 24, 0.85);
+  --hc-alert-blue-bg:  rgba(31, 78, 140, 0.85);
+  --hc-alert-green-bg: rgba(21, 128, 61, 0.85);
 
   --hc-alert-text: rgba(255,255,255,.92);
   --hc-alert-border: rgba(255,255,255,.16);
@@ -16,6 +23,12 @@
   z-index: 50;
 }
 
+/* Stack spacing */
+.hc-alertstack{
+  display: grid;
+  gap: 10px;
+}
+
 .hc-alert{
   display:flex;
   align-items:center;
@@ -25,14 +38,17 @@
   padding: 12px 16px;
 
   border-radius: var(--radius, 16px);
-  overflow: hidden; /* important for rounded background + blur */
+  overflow: hidden; /* ensures background respects the radius */
 
+  /* Default fallback (if no level class) */
   border: 1px solid var(--hc-alert-border);
   background: var(--hc-alert-bg);
   color: var(--hc-alert-text);
 
   backdrop-filter: blur(10px);
 }
+
+/* Keep banner/compact templates working */
 .hc-alert--banner{
   padding: 12px 16px;
 }
@@ -65,73 +81,80 @@
   flex-shrink: 0;
 }
 
-.hc-alert__link{
+/* Links / buttons: consistent glassy treatment over colored backgrounds */
+.hc-alert__link,
+.hc-alert__toggle,
+.hc-alert__dismiss{
   display:inline-flex;
   align-items:center;
+  justify-content:center;
   gap: 8px;
 
-  padding: 8px 10px;
+  height: 38px;
+  padding: 0 12px;
+
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.18);
-  color: rgba(255,255,255,.92);
+  border: 1px solid rgba(255,255,255,.35);
+  background: rgba(255,255,255,.14);
+  color: #ffffff;
+
   text-decoration: none;
   font-weight: 700;
   white-space: nowrap;
+  cursor: pointer;
+}
+
+.hc-alert__link{
+  padding: 0 12px; /* same as toggle for alignment */
 }
 
 .hc-alert__link:focus-visible,
+.hc-alert__toggle:focus-visible,
 .hc-alert__dismiss:focus-visible{
-  outline: 3px solid rgba(255,255,255,.75);
+  outline: 3px solid rgba(255,255,255,.85);
   outline-offset: 2px;
 }
 
 .hc-alert__dismiss{
   width: 38px;
-  height: 38px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.18);
-  background: rgba(255,255,255,.08);
-  color: rgba(255,255,255,.92);
-  cursor: pointer;
+  padding: 0;
 }
 
-/* Softer full background severity styles */
+/* --------------------------------
+   Full background + full border
+--------------------------------- */
 
-.hc-alert--critical {
-  background: rgba(185,28,28,0.85);   /* red */
+.hc-alert--critical{
+  background: var(--hc-alert-red-bg);
   color: #ffffff;
+  border: 2px solid var(--hc-alert-red);
 }
 
-.hc-alert--important {
-  background: rgba(255, 122, 24, 0.85);  /* orange */
+.hc-alert--important{
+  background: var(--hc-alert-amber-bg);
   color: #ffffff;
+  border: 2px solid var(--hc-alert-amber);
 }
 
-.hc-alert--info {
-  background: rgba(31, 78, 140, 0.85);   /* site blue */
+.hc-alert--info{
+  background: var(--hc-alert-blue-bg);
   color: #ffffff;
+  border: 2px solid var(--hc-alert-blue);
 }
 
-.hc-alert--success {
-  background: rgba(21, 128, 61, 0.85);   /* green */
+.hc-alert--success{
+  background: var(--hc-alert-green-bg);
   color: #ffffff;
+  border: 2px solid var(--hc-alert-green);
 }
-
 
 /* -------------------------
    Multi-alert + expand UI
-   (moved out of mobile-only)
 -------------------------- */
-
-/* Stack spacing */
-.hc-alertstack{
-  display: grid;
-  gap: 5px;
-}
 
 /* Preview: 1 line with ellipsis if overflow */
 .hc-alert__preview{
-  opacity: .92;
+  opacity: .95;
   line-height: 1.35;
   font-weight: 500;
 
@@ -146,36 +169,17 @@
 .hc-alert__details{
   margin-top: 8px;
   padding-top: 8px;
-  border-top: 1px solid rgba(255,255,255,.14);
+  border-top: 1px solid rgba(255,255,255,.22);
 }
 
 .hc-alert__full{
-  opacity: .95;
+  opacity: .98;
   line-height: 1.45;
 }
 
 .hc-alert__link--inline{
   margin-top: 10px;
 }
-
-/* View/Hide button */
-.hc-alert__toggle{
-  height: 38px;
-  padding: 0 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.18);
-  background: rgba(255,255,255,.08);
-  color: rgba(255,255,255,.92);
-  cursor: pointer;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.hc-alert__toggle:focus-visible{
-  outline: 3px solid rgba(255,255,255,.75);
-  outline-offset: 2px;
-}
-
 
 /* Mobile */
 @media (max-width: 640px){
@@ -187,11 +191,6 @@
   .hc-alert__actions{
     width: 100%;
     justify-content: flex-start;
+    flex-wrap: wrap;
   }
-  
-
-
 }
-
-
-
