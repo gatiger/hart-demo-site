@@ -147,7 +147,16 @@ function renderDirectory(items) {
     const titleHref = pageUrl || webHref;
 
     const metaParts = [];
-    if (phone) metaParts.push(`<a href="${telHref}" class="phone-link">Phone: ${phone}</a>`);
+    if (Array.isArray(d.phone)) {
+  d.phone.forEach(num => {
+    const clean = safe(num);
+    if (!clean) return;
+    const tel = `tel:${clean.replace(/[^\d+]/g, "")}`;
+    metaParts.push(`<a href="${tel}" class="phone-link">${clean}</a>`);
+  });
+} else if (phone) {
+  metaParts.push(`<a href="${telHref}" class="phone-link">${phone}</a>`);
+}
     if (fax)   metaParts.push(`<a href="${faxHref}" class="phone-link">Fax: ${fax}</a>`);
     if (email) metaParts.push(`<a href="${mailHref}" class="link">Email ${name || "office"}</a>`);
 
