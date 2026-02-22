@@ -102,6 +102,142 @@
     "id": "adult learning",
     "title": "Hart County Adult Learning Center",
     "phone": ["(706) 856-2655", "(706) 376-5534"]  
+  },
+  {
+    "id": "rec dept",
+    "title": "Hart County Recreation Department",
+    "url": "/recdept.html",
+    "phone": "(706) 376-8528"
+  },
+  {
+    "id": "health dept",
+    "title": "Hart County Health Department",
+    "url": "/healthdept.html",
+    "phone": "(706) 376-5117",
+    "fax": "(706) 376-5011"
+  },
+  {
+    "id": "hydra",
+    "title": "HYDRA",
+    "url": "/hyrda.html",
+    "phone": "(706) 376-8899"
+  },
+  {
+    "id": "juvenile probation",
+    "title": "Juvenile Probation",
+    "phone": "(706) 856-2666"
+  },
+  {
+    "id": "library",
+    "title": "Hart County Library",
+    "url": "https://www.hartcountylibrary.com",
+    "phone": "(706) 376-4655"
+  },
+  {
+    "id": "magistrate",
+    "title": "Magistrate Court",
+    "url": "/magistrate.html",
+    "phone": "(706) 376-6817"
+  },
+  {
+    "id": "maintenance shop",
+    "title": "Maintenance Shop",
+    "url": "/maintenance/html",
+    "phone": ["(706) 376-7503", "(706) 376-3468"]
+  },
+  {
+    "id": "behavorial health",
+    "title": "Behavorial Health Center",
+    "url": "/behavorial.html",
+    "phone": "(706) 376-4002"
+  },
+  {
+    "id": "ninth district opportunity",
+    "title": "Ninth District Opportunity",
+    "url": "https://www.ndo.org/area/hart/",
+    "phone": "(706) 376-4150"
+  },
+  {
+    "id": "superior court",
+    "title": "Superior Court - Northern Judicial Circuit",
+    "url": "/superiorcourt.html",
+    "phone": "(706) 376-7151"
+  },
+  {
+    "id": "parole",
+    "title": "Parole Office",
+    "url": "https://njcpo.com",
+    "phone": "(706) 376-5420"
+  },
+  {
+    "id": "probate court",
+    "title": "Probate Court",
+    "url": "/probatecourt.html",
+    "phone": "(706) 376-2565"
+  },
+  {
+    "id": "public defender",
+    "title": "Public Defender",
+    "phone": "(706) 283-2921"
+  },
+  {
+    "id": "public works",
+    "title": "Public Works",
+    "url": "/publicworks.html",
+    "phone": "(706) 376-2024"
+  },
+  {
+    "id": "road department",
+    "title": "Road Department",
+    "url": "/roaddept.html",
+    "phone": "(706) 376-1468",
+    "email": "roads@hartcountyga.gov"
+  },
+  {
+    "id": "senior center",
+    "title": "Senior Center",
+    "url": "/seniorcenter.html",
+    "phone": "(706) 376-3975"
+  },
+  {
+    "id": "sheriff",
+    "title": "Sheriff's Department",
+    "url": "/sheriff.html",
+    "description": "For emergincies call 911",
+    "phone": "(706) 376-3114",
+    "fax": "(706) 376-2287"
+  },
+  {
+    "id": "solid waste",
+    "title": "Solid Waste Department",
+    "url": "/solidwaste.html",
+    "phone": "(706) 376-7333"
+  },
+  {
+    "id": "tax assessors",
+    "title": "Tax Assessor's Office",
+    "url": "/taxassessor.html",
+    "phone": "(706) 376-3997",
+    "fax": "(706) 376-0097"
+  },
+  {
+    "id": "tax commissioner",
+    "title": "Tax Commissioner",
+    "url": "https://www.hartcountypay.com",
+    "phone": "(706) 376-3944",
+    "fax": "(706) 376-6009"
+  },
+  {
+    "id": "whitworth",
+    "title": "Georgia Department of Corrections - Whitworth Detention Center",
+    "url": "https://gdc.georgia.gov/locations/whitworth-womens-facility",
+    "phone": "(706) 856-2601",
+  },
+  {
+    "id": "water and sewer",
+    "title": "Water and Sewer Authority",
+    "url": "https://www.hartwatersewer.com",
+    "phone": "(706) 377-4387"
   }
   ]
 }
