@@ -91,6 +91,18 @@
     "fax": "(706) 856-5370",
     "email": "911addressing@hartcountyga.gov",
     "description": "For permits inside the city limits, contact Hartwell City Hall"
+  },
+  {
+    "id": "fire",
+    "title": "Fire Department",
+    "url": "/firedepartment.html",
+    "phone": "(706) 856-5325"
+  },
+  {
+    "id": "adult learning",
+    "title": "Hart County Adult Learning Center",
+    "phone": "(706) 856-2655",
+    "phone2": "(706) 376-5534"
   }
   ]
 }
