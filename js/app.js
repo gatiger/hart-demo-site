@@ -190,6 +190,19 @@ function renderDirectory(items) {
       </article>
     `;
   }).join("");
+
+  // Disable phone links on desktop (no focus, no click)
+const isDesktop = window.matchMedia("(min-width: 769px)").matches;
+
+document.querySelectorAll("#directoryList .phone-link").forEach(a => {
+  if (isDesktop) {
+    a.setAttribute("tabindex", "-1");
+    a.setAttribute("aria-hidden", "true");
+  } else {
+    a.removeAttribute("tabindex");
+    a.removeAttribute("aria-hidden");
+  }
+});
 }
 
 function renderNews(items){
